@@ -9,7 +9,7 @@ fi
 
 # PATH setup if needed
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-export PATH="/usr/local/ykpers-1.17.3-mac/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/usr/local/edirect:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
 # History
 ##
@@ -46,14 +46,18 @@ setopt print_exit_value
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY="${GPG_TTY:-$(tty 2>/dev/null)}"
 
+export PLOTICUS_PREFABS="/usr/local/share/ploticus/prefabs"
+
 export LSCOLORS=ExGxCxDxBxegedabagaced
 export LC_ALL=en_US.UTF-8
 export PAGER=vimpager
 
 alias ll="ls -FGahl"
 alias l="ls -FGhl"
+alias htop="glances"
 alias update_brew="brew update && brew upgrade && brew cleanup -s"
 alias sshfs_mount="sshfs -C -o defer_permissions,reconnect,follow_symlinks,noappledouble -o cache=no -o volname=Remote_Share_via_SSHFS"
+alias igmt="/usr/local/igmt_1.2/igmt"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
