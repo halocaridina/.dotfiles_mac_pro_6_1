@@ -59,9 +59,17 @@ alias update_brew="brew update && brew upgrade && brew cleanup -s"
 alias sshfs_mount="sshfs -C -o defer_permissions,reconnect,follow_symlinks,noappledouble -o cache=no -o volname=Remote_Share_via_SSHFS"
 alias igmt="/usr/local/igmt_1.2/igmt"
 
+alias ws_2_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
+
+alias music_mpv='mpv --no-video'
+alias music_mpv_random_playlist='mpv --no-video --shuffle --playlist <(find "$PWD" -type f)'
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #autoload -Uz promptinit
 #promptinit
+
+# To stop and start Spotlight indexing when CPU usage goes high
+# sudo mdutil -a -i off && sudo mdutil -a -i on
