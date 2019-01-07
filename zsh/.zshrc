@@ -46,7 +46,9 @@ setopt print_exit_value
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY="${GPG_TTY:-$(tty 2>/dev/null)}"
 
-export PLOTICUS_PREFABS="/usr/local/share/ploticus/prefabs"
+/usr/local/bin/gpgconf --launch gpg-agent
+
+export PLOTICUS_PREFABS="/usr/local/opt/ploticus/share/ploticus"
 
 export LSCOLORS=ExGxCxDxBxegedabagaced
 export LC_ALL=en_US.UTF-8
@@ -58,6 +60,8 @@ alias htop="glances"
 alias update_brew="brew update && brew upgrade && brew cleanup -s"
 alias sshfs_mount="sshfs -C -o defer_permissions,reconnect,follow_symlinks,noappledouble -o cache=no -o volname=Remote_Share_via_SSHFS"
 alias igmt="/usr/local/igmt_1.2/igmt"
+alias mac_pro_spirit='/usr/bin/osascript -e "try" -e "mount volume \"cifs://spirit.auburn.edu/santosr/Mac_Pro_BackUp\"" -e "end try"'
+alias dbs_chair_files='/usr/bin/osascript -e "try" -e "mount volume \"smb://csm1.auburn.edu/csm/Temp Dept - Bio Chair\"" -e "end try"'
 
 alias ws_2_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
 
