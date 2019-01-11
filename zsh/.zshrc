@@ -9,7 +9,7 @@ fi
 
 # PATH setup if needed
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-export PATH="/usr/local/edirect:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/Users/srsantos/.gem/ruby/2.3.0/bin:/usr/local/edirect:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
 # History
 ##
@@ -48,7 +48,7 @@ export GPG_TTY="${GPG_TTY:-$(tty 2>/dev/null)}"
 
 /usr/local/bin/gpgconf --launch gpg-agent
 
-export PLOTICUS_PREFABS="/usr/local/opt/ploticus/share/ploticus"
+export PLOTICUS_PREFABS="/usr/local/share/ploticus/prefabs"
 
 export LSCOLORS=ExGxCxDxBxegedabagaced
 export LC_ALL=en_US.UTF-8
@@ -58,6 +58,7 @@ alias ll="ls -FGahl"
 alias l="ls -FGhl"
 alias htop="glances"
 alias update_brew="brew update && brew upgrade && brew cleanup -s"
+alias tm_prog="tmutil status | awk '/_raw_Percent/ {print $3}' | grep -o '[0-9].[0-9]\+' | awk '{print $1*100}'"
 alias sshfs_mount="sshfs -C -o defer_permissions,reconnect,follow_symlinks,noappledouble -o cache=no -o volname=Remote_Share_via_SSHFS"
 alias igmt="/usr/local/igmt_1.2/igmt"
 alias mac_pro_spirit='/usr/bin/osascript -e "try" -e "mount volume \"cifs://spirit.auburn.edu/santosr/Mac_Pro_BackUp\"" -e "end try"'
